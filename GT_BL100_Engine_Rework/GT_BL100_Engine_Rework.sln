@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.WebApi", "GT.BL100.Engine.Rework.WebApi.csproj", "{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287} = {0AEC07CA-DDCA-4ECB-835D-5A82D4127287}
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1} = {F86DD139-8DF5-434E-9F44-8F7D422547A1}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Common", "..\..\Common\Common\Common.Common\Common.Common.csproj", "{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.App", "..\GT.BL100.Engine.Rework.App\GT.BL100.Engine.Rework.App.csproj", "{F86DD139-8DF5-434E-9F44-8F7D422547A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE} = {84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.Domain", "..\GT.BL100.Engine.Rework.Domain\GT.BL100.Engine.Rework.Domain.csproj", "{B89B3998-83FB-45E1-B698-BC3E183FD9BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.Infra", "..\GT.BL100.Engine.Rework.Infra\GT.BL100.Engine.Rework.Infra.csproj", "{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE} = {84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1} = {F86DD139-8DF5-434E-9F44-8F7D422547A1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86DD139-8DF5-434E-9F44-8F7D422547A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89B3998-83FB-45E1-B698-BC3E183FD9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89B3998-83FB-45E1-B698-BC3E183FD9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89B3998-83FB-45E1-B698-BC3E183FD9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89B3998-83FB-45E1-B698-BC3E183FD9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {626E5EA2-5A97-40D4-809C-35B103B758AC}
+	EndGlobalSection
+EndGlobal
