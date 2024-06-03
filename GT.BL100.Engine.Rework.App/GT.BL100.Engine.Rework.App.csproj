@@ -16,8 +16,4 @@
     <ProjectReference Include="..\GT.BL100.Engine.Rework.Domain\GT.BL100.Engine.Rework.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\" />
-  </ItemGroup>
-
 </Project>

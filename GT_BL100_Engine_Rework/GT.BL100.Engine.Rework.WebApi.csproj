@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Endpoints\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GT.BL100.Engine.Rework.App\GT.BL100.Engine.Rework.App.csproj" />
     <ProjectReference Include="..\GT.BL100.Engine.Rework.Infra\GT.BL100.Engine.Rework.Infra.csproj" />
   </ItemGroup>

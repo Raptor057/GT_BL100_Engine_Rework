@@ -20,7 +20,7 @@ namespace GT.BL100.Engine.Rework.WebApi
                 .AddSingleton(typeof(ResultViewModel<>))
                 .AddSingleton(typeof(GenericViewModel<>))
                 .AddAppServices()
-                .AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(ServiceCollectionEx).Assembly); });
+                .AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(ServiceCollectionEx).Assembly);});
         }
     }
 }
