@@ -1,8 +1,8 @@
 <script>
-    export let lineName = null;
-    export let partNo = null;
-    export let revision = null;
-    export let workOrderCode = null;
+    // export let lineName = null;
+    // export let partNo = null;
+    // export let revision = null;
+    // export let workOrderCode = null;
 
     //$: console.log("xxxxx", production);
   
@@ -34,14 +34,14 @@
       > b {
         margin-left: 2em;
       }
-      > strong {
-        background-color: #ffffff33;
-        border-radius: 0.25em;
-        color: #ff9500;
-        margin: 0 0.5em;
-        min-width: 3rem;
-        padding: 0 0.5em;
-      }
+      // > strong {
+      //   background-color: #ffffff33;
+      //   border-radius: 0.25em;
+      //   color: #ff9500;
+      //   margin: 0 0.5em;
+      //   min-width: 3rem;
+      //   padding: 0 0.5em;
+      // }
 
     }
   </style>

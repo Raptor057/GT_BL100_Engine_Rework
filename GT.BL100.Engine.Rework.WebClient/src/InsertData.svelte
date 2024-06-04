@@ -23,66 +23,6 @@
     let Ccw_SpeedDisabled = false;
     let Amperage_CCWDisabled = false;
     let Ptc_ResistanceDisabled = false;
-  
-    // function handleSubmit() {
-    //   console.log("Datos enviados:", {
-    //     ScannerInput,
-    //     Bearing_Position,
-    //     Arrow_Position,
-    //     Hipot_IR,
-    //     Cw_Speed,
-    //     Amperage_CW,
-    //     Ccw_Speed,
-    //     Amperage_CCW,
-    //     Ptc_Resistance
-    //   });
-
-    //   Bl100EngineRework.InsertMotorData(
-    //     ScannerInput,
-    //     Bearing_Position,
-    //     Arrow_Position,
-    //     Hipot_IR,
-    //     Cw_Speed,
-    //     Amperage_CW,
-    //     Ccw_Speed,
-    //     Amperage_CCW,
-    //     Ptc_Resistance
-    // )
-    //   .then((data) => {
-    //     Sfx.playSuccessSoundAsync();
-    //   })
-    //   .catch((error) => {
-    //     Sfx.playFailureSoundAsync();
-    //     addMessage(error);
-    //   })
-    //   .then(() => {
-    //     input.focus();
-    //   });
-
-  
-    //   // Restablecer los valores de las variables
-    //   ScannerInput = "";
-    //   Bearing_Position = null;
-    //   Arrow_Position = null;
-    //   Hipot_IR = null;
-    //   Cw_Speed = null;
-    //   Amperage_CW = null;
-    //   Ccw_Speed = null;
-    //   Amperage_CCW = null;
-    //   Ptc_Resistance = null;
-  
-    //   // Desbloquear todos los campos
-    //   ScannerInputDisabled = false;
-    //   Bearing_PositionDisabled = false;
-    //   Arrow_PositionDisabled = false;
-    //   Hipot_IRDisabled = false;
-    //   Cw_SpeedDisabled = false;
-    //   Amperage_CWDisabled = false;
-    //   Ccw_SpeedDisabled = false;
-    //   Amperage_CCWDisabled = false;
-    //   Ptc_ResistanceDisabled = false;
-    // }
-
     
     function handleSubmit() {
   console.log("Datos enviados:", {
@@ -207,20 +147,21 @@
   </main>
   
   <style>
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       background-color: #f4f4f4;
-    }
-    main {
+    } */
+    /* main {
       max-width: 600px;
       margin: auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+    } */
+
     h1 {
       text-align: center;
       margin-bottom: 20px;

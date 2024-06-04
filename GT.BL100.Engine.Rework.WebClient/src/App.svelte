@@ -52,7 +52,7 @@
 />
 <!-- <Input {addMessage}/>
 <MessageLog bind:addMessage /> -->
-<InsertData {addMessage}/>
+<InsertData/>
 
 <AppFooter/>
 
