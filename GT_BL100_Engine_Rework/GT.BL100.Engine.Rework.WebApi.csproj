@@ -11,4 +11,10 @@
     <ProjectReference Include="..\GT.BL100.Engine.Rework.Infra\GT.BL100.Engine.Rework.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

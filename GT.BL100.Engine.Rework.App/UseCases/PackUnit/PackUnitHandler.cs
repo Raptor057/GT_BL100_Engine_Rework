@@ -2,7 +2,6 @@
 using GT.BL100.Engine.Rework.App.Services;
 using GT.BL100.Engine.Rework.App.UseCases.PackUnit.Responses;
 //using GT.BL100.Engine.Rework.Domain.Repositories;
-using MediatR;
 using System.Globalization;
 
 namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
@@ -63,7 +62,7 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                 }
                 else 
                 {
-                    return new ErrorMessage("Ya exsiste un motor registrado en este proceso");
+                    return new ErrorMessage($"Ya exsiste un motor registrado en este proceso {serialNumber} {MotorDateTime}");
                 }
             }
             //return new UnitPackedResponse("OK", DateTime.Now, DateTime.Now);

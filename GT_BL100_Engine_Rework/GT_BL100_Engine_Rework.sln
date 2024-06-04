@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.WebApi", "GT.BL100.Engine.Rework.WebApi.csproj", "{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GT.BL100.Engine.Rework.WebApi", "GT.BL100.Engine.Rework.WebApi.csproj", "{BE10DE2F-F68E-4BE2-A331-B37F1117EE98}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287} = {0AEC07CA-DDCA-4ECB-835D-5A82D4127287}
 		{F86DD139-8DF5-434E-9F44-8F7D422547A1} = {F86DD139-8DF5-434E-9F44-8F7D422547A1}
@@ -11,17 +11,39 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.WebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Common", "..\..\Common\Common\Common.Common\Common.Common.csproj", "{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.App", "..\GT.BL100.Engine.Rework.App\GT.BL100.Engine.Rework.App.csproj", "{F86DD139-8DF5-434E-9F44-8F7D422547A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GT.BL100.Engine.Rework.App", "..\GT.BL100.Engine.Rework.App\GT.BL100.Engine.Rework.App.csproj", "{F86DD139-8DF5-434E-9F44-8F7D422547A1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE} = {84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.Domain", "..\GT.BL100.Engine.Rework.Domain\GT.BL100.Engine.Rework.Domain.csproj", "{B89B3998-83FB-45E1-B698-BC3E183FD9BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GT.BL100.Engine.Rework.Domain", "..\GT.BL100.Engine.Rework.Domain\GT.BL100.Engine.Rework.Domain.csproj", "{B89B3998-83FB-45E1-B698-BC3E183FD9BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GT.BL100.Engine.Rework.Infra", "..\GT.BL100.Engine.Rework.Infra\GT.BL100.Engine.Rework.Infra.csproj", "{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GT.BL100.Engine.Rework.Infra", "..\GT.BL100.Engine.Rework.Infra\GT.BL100.Engine.Rework.Infra.csproj", "{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}"
 	ProjectSection(ProjectDependencies) = postProject
 		{84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE} = {84A2CFF0-EC4A-44B3-B2C6-F85A30F546EE}
 		{F86DD139-8DF5-434E-9F44-8F7D422547A1} = {F86DD139-8DF5-434E-9F44-8F7D422547A1}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GT.BL100.Engine.Rework.WebClient", "..\GT.BL100.Engine.Rework.WebClient\", "{E206426C-7FFA-4822-A20C-258D7951486F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65146"
+		Debug.AspNetCompiler.PhysicalPath = "..\GT.BL100.Engine.Rework.WebClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65146\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65146"
+		Release.AspNetCompiler.PhysicalPath = "..\GT.BL100.Engine.Rework.WebClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65146\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65146"
+		SlnRelativePath = "..\GT.BL100.Engine.Rework.WebClient\"
+		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Global
@@ -50,6 +72,10 @@ Global
 		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AEC07CA-DDCA-4ECB-835D-5A82D4127287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E206426C-7FFA-4822-A20C-258D7951486F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E206426C-7FFA-4822-A20C-258D7951486F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E206426C-7FFA-4822-A20C-258D7951486F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E206426C-7FFA-4822-A20C-258D7951486F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
