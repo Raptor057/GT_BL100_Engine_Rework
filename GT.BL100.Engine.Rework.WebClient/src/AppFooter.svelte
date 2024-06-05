@@ -20,7 +20,7 @@
       line-height: 1em;
       overflow: hidden;
       padding: 0 0.25em;      
-      //position: absolute;
+      position: absolute;
 
       right: 0;
 

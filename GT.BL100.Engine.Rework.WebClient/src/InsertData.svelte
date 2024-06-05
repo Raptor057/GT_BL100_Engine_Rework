@@ -172,24 +172,19 @@ function validateForm() {
   </main>
   
   <style>
-    /* body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    } */
-    /* main {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    } */
+  main {
+  max-width: 2000px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Ajusta la altura al 100% de la ventana */
+}
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      /*margin-bottom: 20px;*/
     }
     form {
       display: grid;
