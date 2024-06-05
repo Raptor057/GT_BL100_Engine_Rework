@@ -537,7 +537,7 @@ var app = (function () {
     })("http://mxsrvapps.gt.local/gtt/services/materialloading");
 
     const Bl100EngineRework = (function (apiUrl){
-      apiUrl = 'http://localhost:5149';
+      //apiUrl = 'http://localhost:5149';
       return {
         InsertMotorData:(scannerInput,bearing_Position,arrow_Position,hipot_IR,cw_Speed,amperage_CW,ccw_Speed,amperage_CCW,ptc_Resistance) =>
             HttpRequest.post(`${apiUrl}/api/lines/bl100enginerework`,{ScannerInput: scannerInput,Bearing_Position: bearing_Position,Arrow_Position: arrow_Position,Hipot_IR: hipot_IR,Cw_Speed: cw_Speed,Amperage_CW: amperage_CW,Ccw_Speed: ccw_Speed,Amperage_CCW: amperage_CCW,Ptc_Resistance: ptc_Resistance})
