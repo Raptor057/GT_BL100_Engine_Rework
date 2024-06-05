@@ -99,50 +99,75 @@
     });
 }
 
+function validateForm() {
+  const requiredFields = [
+    ScannerInput,
+    Bearing_Position,
+    Arrow_Position,
+    Hipot_IR,
+    Cw_Speed,
+    Amperage_CW,
+    Ccw_Speed,
+    Amperage_CCW,
+    Ptc_Resistance
+  ];
+
+  for (const field of requiredFields) {
+    if (!field) {
+      alert('Por favor, completa todos los campos antes de enviar.');
+      return false;
+    }
+  }
+
+  return true;
+}
+
 
 
   </script>
   
   <h1>Captura de Datos De Retrabajo De Motor BL100</h1>
   <main>
-    <form on:submit|preventDefault={handleSubmit}>
+    <form on:submit|preventDefault={() => validateForm()}>
       <label class="full-width">
         QR del Motor:
-        <input type="text" bind:value={ScannerInput} on:blur={() => ScannerInputDisabled = true} disabled={ScannerInputDisabled} />
+        <!-- <input type="text" bind:value={ScannerInput} on:blur={() => ScannerInputDisabled = true} disabled={ScannerInputDisabled} /> -->
+        <input type="text" bind:value={ScannerInput} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
-        Posición del rodamiento:
-        <input type="number" step="0.1" bind:value={Bearing_Position} on:blur={() => Bearing_PositionDisabled = true} disabled={Bearing_PositionDisabled} />
+        Posición del Balero:
+        <input type="number" step="0.1" bind:value={Bearing_Position} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Posición de la flecha:
-        <input type="number" step="0.1" bind:value={Arrow_Position} on:blur={() => Arrow_PositionDisabled = true} disabled={Arrow_PositionDisabled} />
+        <input type="number" step="0.1" bind:value={Arrow_Position} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Hipot IR:
-        <input type="number" step="0.01" bind:value={Hipot_IR} on:blur={() => Hipot_IRDisabled = true} disabled={Hipot_IRDisabled} />
+        <input type="number" step="0.01" bind:value={Hipot_IR} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Velocidad CW:
-        <input type="number" step="1" bind:value={Cw_Speed} on:blur={() => Cw_SpeedDisabled = true} disabled={Cw_SpeedDisabled} />
+        <input type="number" step="1" bind:value={Cw_Speed} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Amperaje CW:
-        <input type="number" step="0.1" bind:value={Amperage_CW} on:blur={() => Amperage_CWDisabled = true} disabled={Amperage_CWDisabled} />
+        <input type="number" step="0.1" bind:value={Amperage_CW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Velocidad CCW:
-        <input type="number" step="1" bind:value={Ccw_Speed} on:blur={() => Ccw_SpeedDisabled = true} disabled={Ccw_SpeedDisabled} />
+        <input type="number" step="1" bind:value={Ccw_Speed} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}>
       </label>
       <label>
         Amperaje CCW:
-        <input type="number" step="0.1" bind:value={Amperage_CCW} on:blur={() => Amperage_CCWDisabled = true} disabled={Amperage_CCWDisabled} />
+        <input type="number" step="0.1" bind:value={Amperage_CCW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Resistencia de PTC:
-        <input type="number" step="1" bind:value={Ptc_Resistance} on:blur={() => Ptc_ResistanceDisabled = true} disabled={Ptc_ResistanceDisabled} />
+        <input type="number" step="1" bind:value={Ptc_Resistance} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
-      <button type="submit">Enviar</button>
+      <!-- <button type="submit">Enviar</button> -->
+      <button type="submit" on:click|preventDefault={() => handleSubmit()}>Enviar</button>
     </form>
   </main>
   

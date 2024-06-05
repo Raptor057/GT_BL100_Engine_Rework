@@ -44,12 +44,13 @@
 </script>
 
 <div id="app">
-  <AppHeader
+  <AppHeader/>
+<!-- <AppHeader
   lineName={state.name}
   partNo={state.activePart.number}
   revision={state.activePart.revision}
   workOrderCode={state.activeWorkOrderCode}
-/>
+/> -->
 <!-- <Input {addMessage}/>
 <MessageLog bind:addMessage /> -->
 <InsertData/>
