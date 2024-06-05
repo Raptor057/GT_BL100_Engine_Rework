@@ -21,10 +21,12 @@ namespace GT.BL100.Engine.Rework.Infra.Services
                 ClearInputFromSpecialCharacters(value),
                 Configuration.GetSection(EZMotorsLabelFormatRegExPattern).Value ?? "",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
             if (match.Success)
             {
                 string rawDate = match.Groups["date"].Value;
-                string formattedDate = rawDate.Replace("/", "-"); // Convierte el formato de fecha
+                //string formattedDate = rawDate.Replace("/", "-"); // Convierte el formato de fecha
+                string formattedDate = rawDate.Replace(" ", "-").Replace("/", "-"); // Reemplaza espacios y barras diagonales
                 labelData = new EZ2000MotorsQR(
                 match.Groups["website"].Value,
                 match.Groups["voltage"].Value,

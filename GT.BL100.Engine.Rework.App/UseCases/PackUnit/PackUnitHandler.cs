@@ -31,9 +31,19 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
 
             if (_labelParser.TryParseEZMotorsFormat(request.ScannerInput ?? "", out var labeldata) && labeldata != null)
             {
+                // Intenta analizar la fecha con diferentes formatos
+                string[] dateFormats = { "yyyy-MM-dd", "yyyy-M-dd" }; // Agrega más formatos si es necesario
+
+                DateTime fecha;
+
+                if (DateTime.TryParseExact(labeldata.Date, dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out fecha))
+                {
+                    
+                }
+
                 string serialNumber = labeldata.Motor_number;
                 // Convertir fecha y hora a objetos DateTime
-                DateTime fecha = DateTime.ParseExact(labeldata.Date, "yyyy-MM-dd", null);
+                //DateTime fecha = DateTime.ParseExact(labeldata.Date, "yyyy-MM-dd", null);
                 DateTime hora = DateTime.ParseExact(labeldata.Time, "HH:mm", null);
                 DateTime MotorDateTime = DateTime.ParseExact($"{labeldata.Date} {labeldata.Time}", "yyyy-M-d HH:mm", CultureInfo.InvariantCulture);
                 // Combinar fecha y hora en un solo objeto DateTime
