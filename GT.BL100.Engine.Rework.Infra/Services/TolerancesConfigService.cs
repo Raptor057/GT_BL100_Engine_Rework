@@ -57,38 +57,62 @@ namespace GT.BL100.Engine.Rework.Infra.Services
             int Ptc_ResistanceMax = Convert.ToInt32(Configuration.GetSection(BL100EngineTolerancesPtc_ResistanceMax).Value);
             int Ptc_ResistanceMin = Convert.ToInt32(Configuration.GetSection(BL100EngineTolerancesPtc_ResistanceMin).Value);
 
-            if (bearing_Position >= Bearing_PositionMin && bearing_Position <= Bearing_PositionMax
-                && arrow_Position >= Arrow_PositionMin && arrow_Position <= Arrow_PositionMax
-                && hipot_IR >= Hipot_IRMin && hipot_IR <= Hipot_IRMax
-                && cw_Speed >= Cw_SpeedMin && cw_Speed <= Cw_SpeedMax
-                && amperage_CW >= Amperage_CWMin && amperage_CW <= Amperage_CWMax
-                && ccw_Speed >= Ccw_SpeedMin && ccw_Speed <= Ccw_SpeedMax
-                && amperage_CCW >= Amperage_CCWMin && amperage_CCW <= Amperage_CCWMax
-                && ptc_Resistance >= Ptc_ResistanceMin && ptc_Resistance <= Ptc_ResistanceMax)
-            {
-                bL100EngineData = new BL100EngineDataInput(
-                    bearing_Position,
-                    arrow_Position,
-                    hipot_IR,
-                    cw_Speed,
-                    amperage_CW,
-                    ccw_Speed,
-                    amperage_CCW,
-                    ptc_Resistance,1);
-            }
-            else
-            {
-                //bL100EngineData = null;
-                bL100EngineData = new BL100EngineDataInput(
-                    bearing_Position,
-                    arrow_Position,
-                    hipot_IR,
-                    cw_Speed,
-                    amperage_CW,
-                    ccw_Speed,
-                    amperage_CCW,
-                    ptc_Resistance,0);
-            }
+            #region Old
+            //if (bearing_Position >= Bearing_PositionMin && bearing_Position <= Bearing_PositionMax
+            //    && arrow_Position >= Arrow_PositionMin && arrow_Position <= Arrow_PositionMax
+            //    && hipot_IR >= Hipot_IRMin && hipot_IR <= Hipot_IRMax
+            //    && cw_Speed >= Cw_SpeedMin && cw_Speed <= Cw_SpeedMax
+            //    && amperage_CW >= Amperage_CWMin && amperage_CW <= Amperage_CWMax
+            //    && ccw_Speed >= Ccw_SpeedMin && ccw_Speed <= Ccw_SpeedMax
+            //    && amperage_CCW >= Amperage_CCWMin && amperage_CCW <= Amperage_CCWMax
+            //    && ptc_Resistance >= Ptc_ResistanceMin && ptc_Resistance <= Ptc_ResistanceMax)
+            //{
+            //    bL100EngineData = new BL100EngineDataInput(
+            //        bearing_Position,
+            //        arrow_Position,
+            //        hipot_IR,
+            //        cw_Speed,
+            //        amperage_CW,
+            //        ccw_Speed,
+            //        amperage_CCW,
+            //        ptc_Resistance,
+            //        1);
+            //}
+            //else
+            //{
+            //    //bL100EngineData = null;
+            //    bL100EngineData = new BL100EngineDataInput(
+            //        bearing_Position,
+            //        arrow_Position,
+            //        hipot_IR,
+            //        cw_Speed,
+            //        amperage_CW,
+            //        ccw_Speed,
+            //        amperage_CCW,
+            //        ptc_Resistance,
+            //        0);
+            //}
+            #endregion
+
+            int pass = (bearing_Position >= Bearing_PositionMin && bearing_Position <= Bearing_PositionMax
+               && arrow_Position >= Arrow_PositionMin && arrow_Position <= Arrow_PositionMax
+               && hipot_IR >= Hipot_IRMin && hipot_IR <= Hipot_IRMax
+               && cw_Speed >= Cw_SpeedMin && cw_Speed <= Cw_SpeedMax
+               && amperage_CW >= Amperage_CWMin && amperage_CW <= Amperage_CWMax
+               && ccw_Speed >= Ccw_SpeedMin && ccw_Speed <= Ccw_SpeedMax
+               && amperage_CCW >= Amperage_CCWMin && amperage_CCW <= Amperage_CCWMax
+               && ptc_Resistance >= Ptc_ResistanceMin && ptc_Resistance <= Ptc_ResistanceMax) ? 1 : 0;
+
+            bL100EngineData = new BL100EngineDataInput(
+                bearing_Position,
+                arrow_Position,
+                hipot_IR,
+                cw_Speed,
+                amperage_CW,
+                ccw_Speed,
+                amperage_CCW,
+                ptc_Resistance,
+                pass);
 
             return bL100EngineData != null;
         }

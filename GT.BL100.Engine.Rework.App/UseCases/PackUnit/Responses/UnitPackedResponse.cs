@@ -1,5 +1,5 @@
 ﻿namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit.Responses
 {
-    public record UnitPackedResponse(string serialNumber, DateTime MotorDateTime, DateTime DateTime)
-       : SuccessPackUnitResponse(serialNumber,MotorDateTime,DateTime);
+    public record UnitPackedResponse(string message, DateTime DateTime)
+       : SuccessPackUnitResponse(message,DateTime);
 }

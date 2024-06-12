@@ -46,16 +46,12 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                 // Combinar fecha y hora en un solo objeto DateTime
                 DateTime creationTime = fecha.Add(hora.TimeOfDay);
                 
-                //var GetMotorData = await _saveEzMotors.GetEzMotorsDataAsync(serialNumber,MotorDateTime).ConfigureAwait(false);
-
-                //if (!GetMotorData)
-                //{
                     if (_tolerances.BL100EngineTolerances(
                     request.Bearing_Position,
                     request.Arrow_Position,
                     request.Hipot_IR,
                     request.Cw_Speed,
-                    request.Amperage_CCW,
+                    request.Amperage_CW,
                     request.Ccw_Speed,
                     request.Amperage_CCW,
                     request.Ptc_Resistance
@@ -63,25 +59,18 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                     {
                         await _saveEzMotors.AddEZMotorsDataAsync("Rework", serialNumber,labeldata.No_Load_Current, labeldata.No_Load_Speed,MotorDateTime,labeldata.Rev,"N/A",1,
                             bL100EngineData.bearing_Position, bL100EngineData.arrow_Position, bL100EngineData.hipot_IR, bL100EngineData.cw_Speed, bL100EngineData.amperage_CCW,
-                            bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance).ConfigureAwait(false);
-                        return new UnitPackedResponse(serialNumber,MotorDateTime,DateTime.Now);
+                            bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance, bL100EngineData.pass).ConfigureAwait(false);
+                        return new UnitPackedResponse("Motor Registrado con exito dentro de parametros", DateTime.Now);
                     }
                     else if(bL100EngineData.pass == 0 && bL100EngineData != null)
                     {
                         await _saveEzMotors.AddBadEZMotorsDataAsync("Rework", serialNumber, labeldata.No_Load_Current, labeldata.No_Load_Speed, MotorDateTime, labeldata.Rev, "N/A", 1,
                             bL100EngineData.bearing_Position, bL100EngineData.arrow_Position, bL100EngineData.hipot_IR, bL100EngineData.cw_Speed, bL100EngineData.amperage_CCW,
-                            bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance).ConfigureAwait(false);
-                        return new UnitPackedResponse(serialNumber, MotorDateTime, DateTime.Now);
+                            bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance, bL100EngineData.pass).ConfigureAwait(false);
+                        return new UnitPackedResponse("Motor Registrado con exito pero fuera de parametros", DateTime.Now);
                     }
-                //}
-                //else 
-                //{
-                //    return new ErrorMessage($"Ya exsiste un motor registrado en este proceso {serialNumber} {MotorDateTime}");
-                //}
             }
-            //return new UnitPackedResponse("OK", DateTime.Now, DateTime.Now);
-            return new ErrorMessage("No se registro el motor debido a que esta fuera de tolerancia o el QR no es valido, vuelve a intentar");
-            //throw new NotImplementedException();
+            return new ErrorMessage("No se registro el motor QR no es valido, vuelve a intentar");
         }
     }
 }

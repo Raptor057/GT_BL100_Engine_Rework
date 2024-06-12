@@ -24,7 +24,7 @@
     let Amperage_CCWDisabled = false;
     let Ptc_ResistanceDisabled = false;
     
-    function handleSubmit() {
+function handleSubmit() {
   console.log("Datos enviados:", {
     ScannerInput,
     Bearing_Position,
@@ -49,13 +49,14 @@
     Ptc_Resistance
   )
     .then((response) => {
+
       if (response.isSuccess = true) {
+
         // Éxito: hacer algo con la respuesta
-        //console.log("Éxito:", response.message);
         Sfx.playSuccessSoundAsync();
         // Mostrar una alerta al usuario
-        alert("Motor registrado exitosamente.");
-        // ...
+        alert(`${response.message}.`);
+
       } 
       else if (response.isSuccess = false)
       {
@@ -98,6 +99,7 @@
       Ptc_ResistanceDisabled = false;
     });
 }
+
 
 function validateForm() {
   const requiredFields = [
