@@ -74,11 +74,20 @@ namespace GT.BL100.Engine.Rework.Infra.Services
                     amperage_CW,
                     ccw_Speed,
                     amperage_CCW,
-                    ptc_Resistance);
+                    ptc_Resistance,1);
             }
             else
             {
-                bL100EngineData = null;
+                //bL100EngineData = null;
+                bL100EngineData = new BL100EngineDataInput(
+                    bearing_Position,
+                    arrow_Position,
+                    hipot_IR,
+                    cw_Speed,
+                    amperage_CW,
+                    ccw_Speed,
+                    amperage_CCW,
+                    ptc_Resistance,0);
             }
 
             return bL100EngineData != null;

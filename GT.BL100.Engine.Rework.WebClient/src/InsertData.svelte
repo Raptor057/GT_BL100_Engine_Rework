@@ -151,12 +151,12 @@ function validateForm() {
         <input type="number" step="0.1" bind:value={Amperage_CW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
-        Amperaje CCW:
-        <input type="number" step="0.1" bind:value={Amperage_CCW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
-      </label>
-      <label>
         Velocidad CCW:
         <input type="number" step="1" bind:value={Ccw_Speed} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}>
+      </label>
+      <label>
+        Amperaje CCW:
+        <input type="number" step="0.1" bind:value={Amperage_CCW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Hipot IR:

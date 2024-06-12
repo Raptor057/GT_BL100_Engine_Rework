@@ -59,14 +59,14 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                     request.Ccw_Speed,
                     request.Amperage_CCW,
                     request.Ptc_Resistance
-                    , out var bL100EngineData) && bL100EngineData != null)
+                    , out var bL100EngineData)&& bL100EngineData.pass == 1 && bL100EngineData != null)
                     {
                         await _saveEzMotors.AddEZMotorsDataAsync("Rework", serialNumber,labeldata.No_Load_Current, labeldata.No_Load_Speed,MotorDateTime,labeldata.Rev,"N/A",1,
                             bL100EngineData.bearing_Position, bL100EngineData.arrow_Position, bL100EngineData.hipot_IR, bL100EngineData.cw_Speed, bL100EngineData.amperage_CCW,
                             bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance).ConfigureAwait(false);
                         return new UnitPackedResponse(serialNumber,MotorDateTime,DateTime.Now);
                     }
-                    else
+                    else if(bL100EngineData.pass == 0 && bL100EngineData != null)
                     {
                         await _saveEzMotors.AddBadEZMotorsDataAsync("Rework", serialNumber, labeldata.No_Load_Current, labeldata.No_Load_Speed, MotorDateTime, labeldata.Rev, "N/A", 1,
                             bL100EngineData.bearing_Position, bL100EngineData.arrow_Position, bL100EngineData.hipot_IR, bL100EngineData.cw_Speed, bL100EngineData.amperage_CCW,
