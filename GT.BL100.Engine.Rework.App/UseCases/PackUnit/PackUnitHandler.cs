@@ -9,15 +9,12 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
     internal sealed class PackUnitHandler : IInteractor<PackUnitRequest, PackUnitResponse>
     {
         private readonly ILabelParserService _labelParser;
-        //private readonly IUnitRepository _units;
         private readonly ITolerancesConfigService _tolerances;
         private readonly ISaveEzMotorsGateway _saveEzMotors;
 
-        //public PackUnitHandler( ILabelParserService labelParser, IUnitRepository units, ITolerancesConfigService tolerances, ISaveEzMotorsGateway saveEzMotors)
         public PackUnitHandler(ILabelParserService labelParser,ITolerancesConfigService tolerances, ISaveEzMotorsGateway saveEzMotors)
         {
             _labelParser=labelParser;
-            //_units=units;
             _tolerances=tolerances;
             _saveEzMotors=saveEzMotors;
         }
@@ -49,10 +46,10 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                 // Combinar fecha y hora en un solo objeto DateTime
                 DateTime creationTime = fecha.Add(hora.TimeOfDay);
                 
-                var GetMotorData = await _saveEzMotors.GetEzMotorsDataAsync(serialNumber,MotorDateTime).ConfigureAwait(false);
+                //var GetMotorData = await _saveEzMotors.GetEzMotorsDataAsync(serialNumber,MotorDateTime).ConfigureAwait(false);
 
-                if (!GetMotorData)
-                {
+                //if (!GetMotorData)
+                //{
                     if (_tolerances.BL100EngineTolerances(
                     request.Bearing_Position,
                     request.Arrow_Position,
@@ -69,11 +66,18 @@ namespace GT.BL100.Engine.Rework.App.UseCases.PackUnit
                             bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance).ConfigureAwait(false);
                         return new UnitPackedResponse(serialNumber,MotorDateTime,DateTime.Now);
                     }
-                }
-                else 
-                {
-                    return new ErrorMessage($"Ya exsiste un motor registrado en este proceso {serialNumber} {MotorDateTime}");
-                }
+                    else
+                    {
+                        await _saveEzMotors.AddBadEZMotorsDataAsync("Rework", serialNumber, labeldata.No_Load_Current, labeldata.No_Load_Speed, MotorDateTime, labeldata.Rev, "N/A", 1,
+                            bL100EngineData.bearing_Position, bL100EngineData.arrow_Position, bL100EngineData.hipot_IR, bL100EngineData.cw_Speed, bL100EngineData.amperage_CCW,
+                            bL100EngineData.ccw_Speed, bL100EngineData.amperage_CCW, bL100EngineData.ptc_Resistance).ConfigureAwait(false);
+                        return new UnitPackedResponse(serialNumber, MotorDateTime, DateTime.Now);
+                    }
+                //}
+                //else 
+                //{
+                //    return new ErrorMessage($"Ya exsiste un motor registrado en este proceso {serialNumber} {MotorDateTime}");
+                //}
             }
             //return new UnitPackedResponse("OK", DateTime.Now, DateTime.Now);
             return new ErrorMessage("No se registro el motor debido a que esta fuera de tolerancia o el QR no es valido, vuelve a intentar");

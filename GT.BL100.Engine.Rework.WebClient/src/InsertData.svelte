@@ -143,10 +143,6 @@ function validateForm() {
         <input type="number" step="0.1" bind:value={Arrow_Position} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
-        Hipot IR:
-        <input type="number" step="0.01" bind:value={Hipot_IR} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
-      </label>
-      <label>
         Velocidad CW:
         <input type="number" step="1" bind:value={Cw_Speed} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
@@ -155,12 +151,16 @@ function validateForm() {
         <input type="number" step="0.1" bind:value={Amperage_CW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
+        Amperaje CCW:
+        <input type="number" step="0.1" bind:value={Amperage_CCW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
+      </label>
+      <label>
         Velocidad CCW:
         <input type="number" step="1" bind:value={Ccw_Speed} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}>
       </label>
       <label>
-        Amperaje CCW:
-        <input type="number" step="0.1" bind:value={Amperage_CCW} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
+        Hipot IR:
+        <input type="number" step="0.01" bind:value={Hipot_IR} on:keydown={(event) => event.key === 'Enter' && event.preventDefault()}/>
       </label>
       <label>
         Resistencia de PTC:
